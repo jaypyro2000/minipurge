@@ -11,4 +11,4 @@ $scoreboard players set #countdown variables $(war)
 title @a times 10 20 10
 title @a title {"text":"Pvp has been enabled.", "bold":false, "italic":true, "color":"yellow"}
 
-$schedule function minipurge:dispatcher $(war)s
+$schedule function mphelper:mechanics/master_dispatcher $(war)s

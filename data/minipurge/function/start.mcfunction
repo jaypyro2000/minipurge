@@ -24,4 +24,4 @@ execute store result storage minipurge:variables war int 60 run scoreboard playe
 execute store result storage minipurge:variables shrink int 60 run scoreboard players get #shrink variables
 execute store result storage minipurge:variables endgame int 60 run scoreboard players get #endgame variables
 
-schedule function minipurge:boot 1t
+schedule function mphelper:setup/boot 1t

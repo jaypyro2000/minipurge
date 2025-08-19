@@ -27,4 +27,4 @@ execute as @e[tag=chest_loc,limit=1] if data block ~ ~-1 ~ Items[{Slot:24b,id:"m
 execute as @e[tag=chest_loc,limit=1] if data block ~ ~-1 ~ Items[{Slot:25b,id:"minecraft:player_head"}] run data modify block ~ ~-1 ~ Items[{Slot:25b}] set value {Slot:25b,id:"minecraft:golden_apple",Count:1b}
 execute as @e[tag=chest_loc,limit=1] if data block ~ ~-1 ~ Items[{Slot:26b,id:"minecraft:player_head"}] run data modify block ~ ~-1 ~ Items[{Slot:26b}] set value {Slot:26b,id:"minecraft:golden_apple",Count:1b}
 
-schedule function minipurge:treasure_chest 2t
+schedule function mphelper:mechanics/treasure_chest 2t

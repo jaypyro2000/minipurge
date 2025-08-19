@@ -10,7 +10,6 @@ fill ~-1 ~30 ~-4 ~-1 ~31 ~-4 minecraft:polished_tuff
 setblock ~0 ~30 ~-4 minecraft:light_blue_wool
 fill ~0 ~31 ~-4 ~1 ~31 ~-4 minecraft:polished_tuff
 setblock ~1 ~30 ~-4 minecraft:polished_tuff
-setblock ~12 ~-1 ~-4 minecraft:polished_tuff
 fill ~-2 ~29 ~-3 ~-2 ~29 ~-2 minecraft:polished_tuff
 fill ~-2 ~30 ~-3 ~-2 ~31 ~-3 minecraft:polished_tuff
 fill ~-1 ~28 ~-3 ~1 ~28 ~-3 minecraft:polished_tuff
