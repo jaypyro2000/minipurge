@@ -1,4 +1,6 @@
 #Copyright JayPyro2000 2025. All Rights Reserved.
+
+# Replaces player heads with golden apples for each slot and then runs again.
 execute as @e[tag=chest_loc,limit=1] if data block ~ ~-1 ~ Items[{Slot:0b,id:"minecraft:player_head"}] run data modify block ~ ~-1 ~ Items[{Slot:0b}] set value {Slot:0b,id:"minecraft:golden_apple",Count:1b}
 execute as @e[tag=chest_loc,limit=1] if data block ~ ~-1 ~ Items[{Slot:1b,id:"minecraft:player_head"}] run data modify block ~ ~-1 ~ Items[{Slot:1b}] set value {Slot:1b,id:"minecraft:golden_apple",Count:1b}
 execute as @e[tag=chest_loc,limit=1] if data block ~ ~-1 ~ Items[{Slot:2b,id:"minecraft:player_head"}] run data modify block ~ ~-1 ~ Items[{Slot:2b}] set value {Slot:2b,id:"minecraft:golden_apple",Count:1b}

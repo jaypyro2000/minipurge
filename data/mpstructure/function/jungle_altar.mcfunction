@@ -1,3 +1,6 @@
+#Copyright JayPyro2000 2025. All Rights Reserved.
+
+#Sets up spawn area.
 setblock ~ ~-1 ~ minecraft:deepslate_bricks
 setblock ~1 ~-1 ~ minecraft:deepslate_bricks
 setblock ~-1 ~-1 ~ minecraft:deepslate_bricks

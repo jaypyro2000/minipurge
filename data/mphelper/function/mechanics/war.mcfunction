@@ -1,6 +1,9 @@
 #Copyright JayPyro2000 2025. All Rights Reserved.
 team remove Peaceful
 
+# Run the add-ons.
+function mphelper:mechanics/run_add_ons {stage:mpwar}
+
 # Change bossbar
 bossbar set minipurge:timerbar color yellow
 $bossbar set minipurge:timerbar max $(war)

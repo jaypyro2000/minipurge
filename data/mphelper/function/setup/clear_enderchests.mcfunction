@@ -1,4 +1,6 @@
 #Copyright JayPyro2000 2025. All Rights Reserved.
+
+# Trashes all ender chests.
 loot replace entity @s enderchest.0 loot minecraft:blocks/dirt
 loot replace entity @s enderchest.1 loot minecraft:blocks/dirt
 loot replace entity @s enderchest.2 loot minecraft:blocks/dirt

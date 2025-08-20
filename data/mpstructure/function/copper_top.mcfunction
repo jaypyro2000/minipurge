@@ -1,3 +1,5 @@
+#Copyright JayPyro2000 2025. All Rights Reserved.
+
 # Creates spawn area.
 setblock ~ ~-1 ~ minecraft:oxidized_copper 
 setblock ~ ~-1 ~-1 minecraft:oxidized_copper
@@ -152,5 +154,6 @@ setblock ~1 ~-4 ~-7 minecraft:oxidized_cut_copper_stairs[facing=south]
 setblock ~-1 ~-4 ~7 minecraft:oxidized_cut_copper_stairs[facing=north]
 setblock ~-1 ~-4 ~-7 minecraft:oxidized_cut_copper_stairs[facing=south]
 setblock ~-7 ~-4 ~-1 minecraft:oxidized_cut_copper_stairs[facing=east]
+
 # Sets up treasure chest.
 setblock ~ ~ ~ minecraft:chest

@@ -1,3 +1,6 @@
+#Copyright JayPyro2000 2025. All Rights Reserved.
+
+# Sets up spawn area.
 setblock ~ ~-1 ~2 minecraft:air
 setblock ~ ~ ~2 minecraft:air
 setblock ~ ~-1 ~-2 minecraft:air

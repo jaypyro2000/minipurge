@@ -56,7 +56,7 @@ schedule function mphelper:mechanics/countdown 5s
 title @a times 20 40 20
 title @a title {"text":"Let the Games Begin!", "bold":true, "italic":true, "color":"green"}
 
-function minipurgeyellow:setup
-function minipurgesilver:setup
+# Run the add-ons.
+function mphelper:mechanics/run_add_ons {stage:mpsetup}
 
 $schedule function mphelper:mechanics/master_dispatcher $(peace)s
