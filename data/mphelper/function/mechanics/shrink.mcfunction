@@ -9,8 +9,8 @@ bossbar set minipurge:timerbar name {"text":"Border Shrinking","color":"red"}
 $scoreboard players set #countdown variables $(shrink)
 
 # Run the add-ons.
-function mphelper:mechanics/run_add_ons {stage:mpshrink}
+function mphelper:add_ons/run_add_ons {stage:mpshrink}
 
 title @a title {"text":"The border is now shrinking!",  "bold":false, "italic":true, "color":"red"}
-execute as @e[tag=center_loc,limit=1] run tellraw @a [{"text":"Border Shrinking to: "},{"nbt":"Pos[0]","entity":"@s"},{"text":" "},{"nbt":"Pos[1]","entity":"@s"},{"text":" "},{"nbt":"Pos[2]","entity":"@s"}]
+$tellraw @a [{"text":"Border Shrinking to: $(center_x_pos) $(center_y_pos) $(center_z_pos)"}]
 $schedule function mphelper:mechanics/master_dispatcher $(endgame)s

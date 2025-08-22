@@ -24,4 +24,4 @@ data remove storage minipurge:structure structure_heights
 data remove storage minipurge:structure spawn_distances
 
 # Run the add-ons.
-function mphelper:mechanics/run_add_ons {stage:mpreset}
+function mphelper:add_ons/run_add_ons {stage:mpreset}

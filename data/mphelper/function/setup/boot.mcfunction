@@ -1,5 +1,8 @@
 #Copyright JayPyro2000 2025. All Rights Reserved.
 
+# Define the ground position
+$summon minecraft:marker $(center_x_pos) $(center_y_pos) $(center_z_pos) {Tags:["ground_loc"]}
+
 #Add default minipurge structures to the possible structure list
 data modify storage minipurge:structure structures append value "mpstructure:copper_top"
 data modify storage minipurge:structure structure_heights append value 4
@@ -12,7 +15,7 @@ data modify storage minipurge:structure structure_heights append value 11
 data modify storage minipurge:structure spawn_distances append value 0
 
 # Run the add-ons.
-function mphelper:mechanics/run_add_ons {stage:mpboot}
+function mphelper:add_ons/run_add_ons {stage:mpboot}
 
 # Determine max structure index and start the build process
 execute store result score #max_structure_index variables run data get storage minipurge:structure structures
