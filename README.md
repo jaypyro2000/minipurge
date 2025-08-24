@@ -2,10 +2,7 @@
 
 Minipurge is an automatic Minecraft Purge/Hunger Games/Fortnite multiplayer world event scheduler.
 
-The latest stable releases can be downloaded here from Curseforge or Modrinth: 
-
-https://www.curseforge.com/minecraft/data-packs/minipurge
-https://modrinth.com/datapack/minipurge
+The latest stable releases can be downloaded here from [Modrinth]https://modrinth.com/datapack/minipurge or [Curseforge.]https://www.curseforge.com/minecraft/data-packs/minipurge: 
 
 ## There are three stages of the event:
 Peace; Where PVP is disabled and you can collect resources.
@@ -22,6 +19,7 @@ The time for each of these stages, the initial border size and the number of liv
 ```
     /function minipurge:start { lives:<value>, border:<value>, peace:<value>, war:<value>, shrink:<value> }
 ```
+
     Where each <value> can be set to your liking!
 
 "lives" is the number of lives a player has before going into spectator.
@@ -45,4 +43,4 @@ All other commands are helper functions and don't need to be worried about.
 
 Please send suggestions or comments to: jaypyro2000@gmail.com
 
-Let the games Begin!
+## Let the games Begin!
