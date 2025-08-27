@@ -50,7 +50,7 @@ When minipurge:help is called:
     execute run function your_custom_namespace/mphelp with storage minipurge:variables
 ```
 
-An example minipurge
+An example minipurge add-on can be found [here.](https://github.com/jaypyro2000/example_minipurge_add_on)
 
 ## Built in functions
 
