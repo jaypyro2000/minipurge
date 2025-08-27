@@ -12,6 +12,7 @@ worldborder set 30000000
 # Reset tags, clear schedules and reset structures.
 tag @e[tag=center_loc] remove center_loc
 tag @e[tag=chest_loc] remove chest_loc
+tag @e[tag=ground_loc] remove ground_loc
 bossbar set minipurge:timerbar visible false
 schedule clear mphelper:mechanics/death_dispatcher
 schedule clear mphelper:mechanics/treasure_chest

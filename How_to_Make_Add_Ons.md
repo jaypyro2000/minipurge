@@ -50,6 +50,8 @@ When minipurge:help is called:
     execute run function your_custom_namespace/mphelp with storage minipurge:variables
 ```
 
+An example minipurge
+
 ## Built in functions
 
 There are many functions that minipurge has so that various tasks can be done easily. Please make use of them.
@@ -73,7 +75,7 @@ function mphelper:surface/surface_from_storage {x_pos_storage:"namespace:storage
 
 Minipurge randomly selects a structure from a registry of mid structures. The registry has three parts. 1) The name of the structure, located at minipurge:structure structures . 2) The height of the mid chest from the ground, located at minipurge:structure structure_heights . 3) (Not working yet) The distance a player should spawn from mid, located at minipurge:structure spawn_distances .
 
-You can overwrite all the structures to only have specific mid structures or you can add your structures to the mix by appending them to the lists. All three storage locations must be written to for each structure!
+You can overwrite all the structures to only have specific mid structures or you can add your structures to the mix by appending them to the lists. This must be done in the mpboot stage as the structures list is cleared at the end of each round. All three storage locations must be written to for each structure!
 
 An example of this is:
 ```
@@ -82,9 +84,12 @@ data modify storage minipurge:structure structure_heights append value 12
 data modify storage minipurge:structure spawn_distances append value 0
 ```
 
+
 ## Good Practices
 
 Be careful not to overwrite existing dummy scores and storage locations of minipurge or minipurge add ons. Do this by making your "player names" or "objectives" unique and by trying not to use the minipurge:variables storage location if possible. I am in the process of putting together a list of these so that you know what to stay away from.
+
+Clear all running functions and clear all variables when mpreset is called so that previous rounds of minipurge don't interfere with the proper functioning of the next round.
 
 ### Please do not create add-ons that copy functionality of exclusive add-ons as it hurts the long term viability of this project.
 
