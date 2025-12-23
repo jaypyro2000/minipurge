@@ -5,7 +5,7 @@ gamemode survival @a
 gamemode creative @s
 
 # Reset world settings.
-gamerule doDaylightCycle true
+gamerule minecraft:advance_time true
 worldborder center 0 0
 worldborder set 30000000
 

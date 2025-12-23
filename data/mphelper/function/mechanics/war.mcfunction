@@ -1,5 +1,5 @@
 #Copyright JayPyro2000 2025. All Rights Reserved.
-team remove Peaceful
+gamerule minecraft:pvp true
 
 # Run the add-ons.
 function mphelper:add_ons/run_add_ons {stage:mpwar}

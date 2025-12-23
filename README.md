@@ -2,7 +2,7 @@
 
 Minipurge is an automatic Minecraft Purge/Hunger Games/Fortnite multiplayer world event scheduler.
 
-The latest stable releases can be downloaded here from [Modrinth]https://modrinth.com/datapack/minipurge or [Curseforge.]https://www.curseforge.com/minecraft/data-packs/minipurge: 
+The latest stable releases can be downloaded here from [Modrinth](https://modrinth.com/datapack/minipurge) or [Curseforge.](https://www.curseforge.com/minecraft/data-packs/minipurge) 
 
 ## There are three stages of the event:
 Peace; Where PVP is disabled and you can collect resources.

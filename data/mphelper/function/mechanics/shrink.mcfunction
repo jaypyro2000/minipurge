@@ -1,5 +1,5 @@
 #Copyright JayPyro2000 2025. All Rights Reserved.
-$worldborder set 20 $(shrink)
+$worldborder set 20 $(shrink)s
 
 # Change bossbar
 bossbar set minipurge:timerbar color red

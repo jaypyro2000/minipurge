@@ -16,18 +16,16 @@ effect clear @a
 effect give @a minecraft:instant_health 2 225 false
 effect give @a minecraft:saturation 2 225 false
 advancement revoke @a everything
-gamerule locatorBar false
+gamerule minecraft:locator_bar false
 execute as @a run function mphelper:setup/clear_enderchests
 
 # Set and keep time.
 time set noon
-gamerule doDaylightCycle false
+gamerule minecraft:advance_time false
 weather clear
 
-# Disable pvp (hack).
-team add Peaceful
-team join Peaceful @a
-team modify Peaceful friendlyFire false
+# Disable pvp.
+gamerule minecraft:pvp false
 
 # Set worldborder.
 worldborder center ~ ~
