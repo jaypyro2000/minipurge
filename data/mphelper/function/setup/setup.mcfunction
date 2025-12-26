@@ -54,6 +54,9 @@ schedule function mphelper:mechanics/countdown 5s
 title @a times 20 40 20
 title @a title {"text":"Let the Games Begin!", "bold":true, "italic":true, "color":"green"}
 
+# Dispaly more info.
+$tellraw @a [{"text":"Welcome to a round of MiniPurge!\n","bold":true,"color":"red"}, {"text":"You have been granted ","bold":true,"color":"white"}, {"text":"$(peace_mins)","bold":true,"color":"green"}, {"text":" minutes of peace, ","color":"white"}, {"text":"$(war_mins)","bold":true,"color":"yellow"}, {"text":"  minutes and ","color":"white"}, {"text":"$(lives)","bold":true,"color":"yellow"},{"text":" lives to prove your minecraft superiority and ","color":"white"}, {"text":"$(shrink_mins)","bold":true,"color":"red"}, {"text":" minutes while the border shrinks in on ","color":"white"}, {"text":"$(center_x_pos), $(center_y_pos), $(center_z_pos)","bold":true,"color":"blue"}, {"text":".\nGood luck!","bold":true,"color":"green"}]
+
 # Run the add-ons.
 function mphelper:add_ons/run_add_ons {stage:mpsetup}
 

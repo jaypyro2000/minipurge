@@ -30,13 +30,18 @@ scoreboard players remove #lives variables 1
 # Reset the master dispatcher.
 scoreboard players set #master_dispatcher variables 1
 
-# Transfer to NBT storage
+# Transfer to NBT storage in seconds
 $data modify storage minipurge:variables border set value $(border)
 $data modify storage minipurge:variables lives set value $(lives)
 execute store result storage minipurge:variables peace int 60 run scoreboard players get #peace variables
 execute store result storage minipurge:variables war int 60 run scoreboard players get #war variables
 execute store result storage minipurge:variables shrink int 60 run scoreboard players get #shrink variables
 execute store result storage minipurge:variables endgame int 60 run scoreboard players get #endgame variables
+
+# Transfer to NBT storage in minutes
+execute store result storage minipurge:variables peace_mins int 1 run scoreboard players get #peace variables
+execute store result storage minipurge:variables war_mins int 1 run scoreboard players get #war variables
+execute store result storage minipurge:variables shrink_mins int 1 run scoreboard players get #shrink variables
 
 # Execute the boot sequence. 
 execute run function mphelper:setup/boot with storage minipurge:variables
