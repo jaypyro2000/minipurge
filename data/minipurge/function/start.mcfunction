@@ -30,10 +30,20 @@ scoreboard players remove #lives variables 1
 # Reset the master dispatcher.
 scoreboard players set #master_dispatcher variables 1
 
-# Transfer to NBT storage in seconds
+# Store border size and get half border size.
 $data modify storage minipurge:variables border set value $(border)
+$scoreboard players set #border variables $(border)
+scoreboard players set #two variables 2
+$scoreboard players set #half_border variables $(border)
+scoreboard players operation #half_border variables /= #two variables
+execute store result storage minipurge:variables half_border int 1 run scoreboard players get #half_border variables
+
+# Store lives as NBT value.
 $data modify storage minipurge:variables lives set value $(lives)
-execute store result storage minipurge:variables peace int 60 run scoreboard players get #peace variables
+
+# Transfer to NBT storage in seconds
+execute if score #peace variables matches 1.. run execute store result storage minipurge:variables peace int 60 run scoreboard players get #peace variables
+execute if score #peace variables matches 0 run data modify storage minipurge:variables peace set value 1
 execute store result storage minipurge:variables war int 60 run scoreboard players get #war variables
 execute store result storage minipurge:variables shrink int 60 run scoreboard players get #shrink variables
 execute store result storage minipurge:variables endgame int 60 run scoreboard players get #endgame variables

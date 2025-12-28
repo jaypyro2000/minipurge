@@ -3,10 +3,15 @@
 # Sets up treasure chest.
 schedule function mphelper:mechanics/treasure_chest 2t
 
-# Move everyone to spawn and set it.
-tp @a ~ ~1 ~
+# Set world spawn.
 setworldspawn ~ ~1 ~
-spawnpoint @a ~ ~1 ~
+
+# If there is peace teleport and set spawnpoint for all players to mid.
+execute if score #peace variables matches 1.. run tp @a ~ ~1 ~
+execute if score #peace variables matches 1.. run spawnpoint @a ~ ~1 ~
+
+# If there is no peace scatter spwn players.
+execute as @a if score #peace variables matches 0 run function mphelper:setup/scatter_spawn with storage minipurge:variables
 
 # Set everyones health etc. attributes.
 gamemode survival @a
