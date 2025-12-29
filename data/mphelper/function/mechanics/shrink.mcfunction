@@ -12,5 +12,5 @@ $scoreboard players set #countdown variables $(shrink)
 function mphelper:add_ons/run_add_ons {stage:mpshrink}
 
 title @a title {"text":"The border is now shrinking!",  "bold":false, "italic":true, "color":"red"}
-$tellraw @a [{"text":"Border Shrinking to: $(center_x_pos) $(center_y_pos) $(center_z_pos)"}, "bold":true, "color":"red"]
+$tellraw @a [{"text":"Border Shrinking to: $(center_x_pos) $(center_y_pos) $(center_z_pos)", "bold":true, "color":"red"}]
 $schedule function mphelper:mechanics/master_dispatcher $(endgame)s
