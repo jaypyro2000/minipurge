@@ -41,12 +41,14 @@ execute store result storage minipurge:variables half_border int 1 run scoreboar
 # Store lives as NBT value.
 $data modify storage minipurge:variables lives set value $(lives)
 
-# Transfer to NBT storage in seconds
+# Transfer to NBT storage in seconds or set them to 1 second if 0
 execute if score #peace variables matches 1.. run execute store result storage minipurge:variables peace int 60 run scoreboard players get #peace variables
 execute if score #peace variables matches 0 run data modify storage minipurge:variables peace set value 1
-execute store result storage minipurge:variables war int 60 run scoreboard players get #war variables
+execute if score #war variables matches 1.. run execute store result storage minipurge:variables war int 60 run scoreboard players get #war variables
+execute if score #war variables matches 0 run data modify storage minipurge:variables war set value 1
 execute store result storage minipurge:variables shrink int 60 run scoreboard players get #shrink variables
-execute store result storage minipurge:variables endgame int 60 run scoreboard players get #endgame variables
+execute if score #endgame variables matches 1.. run execute store result storage minipurge:variables endgame int 60 run scoreboard players get #endgame variables
+execute if score #endgame variables matches 0 run data modify storage minipurge:variables endgame set value 1
 
 # Transfer to NBT storage in minutes
 execute store result storage minipurge:variables peace_mins int 1 run scoreboard players get #peace variables
