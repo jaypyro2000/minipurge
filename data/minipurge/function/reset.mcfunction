@@ -3,6 +3,7 @@
 # Reset players.
 gamemode survival @a
 gamemode creative @s
+scoreboard players set @a deaths 0
 
 # Reset world settings.
 gamerule minecraft:advance_time true

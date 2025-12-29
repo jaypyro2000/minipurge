@@ -74,8 +74,8 @@ $execute if score #shrink variables matches 1.. run tellraw @a [{"text":"The bor
 execute if score #shrink variables matches 0 run tellraw @a [{"text":"The border will not shrink.","bold":true,"color":"white"}]
 
 # Display lives info.
-$execute if score #lives variables matches 1.. run tellraw @a [{"text":"Use your ","color":"white","bold":true}, {"text":"$(lives)","bold":true,"color":"green"},{"text":" lives wisely.","color":"white","bold":true}]
-execute if score #lives variables matches 0 run tellraw @a [{"text":"This round is in hardcore mode.","color":"white","bold":true}]
+$execute if score #lives variables matches 2.. run tellraw @a [{"text":"Use your ","color":"white","bold":true}, {"text":"$(lives)","bold":true,"color":"green"},{"text":" lives wisely.","color":"white","bold":true}]
+execute if score #lives variables matches 1 run tellraw @a [{"text":"This round is in hardcore mode.","color":"white","bold":true}]
 
 tellraw @a [{"text":"Good luck!","bold":true,"color":"green"}]
 

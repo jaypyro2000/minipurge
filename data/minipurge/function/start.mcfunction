@@ -23,23 +23,29 @@ $scoreboard players set #shrink variables $(shrink)
 $scoreboard players set #endgame variables $(shrink)
 execute if score #shrink variables matches 5.. run scoreboard players remove #endgame variables 5
 
-# Is used later to determine when to put players in spectator.
+# Is used later to determine when to put players in spectator or kick them.
 $scoreboard players set #lives variables $(lives)
-scoreboard players remove #lives variables 1
+execute if score #lives variables matches 0 run scoreboard players set #lives variables 1
+execute if score #lives variables matches 1.. run scoreboard players set #kick variables 1
+execute if score #lives variables matches ..-1 run scoreboard players set #kick variables 0
+scoreboard players set #negative variables -1
+execute if score #lives variables matches ..-1 run scoreboard players operation #lives variables *= #negative variables
+
+# Store lives as NBT value.
+execute store result storage minipurge:variables lives int 1 run scoreboard players get #lives variables
 
 # Reset the master dispatcher.
 scoreboard players set #master_dispatcher variables 1
 
 # Store border size and get half border size.
-$data modify storage minipurge:variables border set value $(border)
 $scoreboard players set #border variables $(border)
+execute if score #border variables matches ..-1 run scoreboard players operation #border variables *= #negative variables
+execute if score #border variables matches 0 run execute store result score #border variables run function mphelper:setup/optimized_border
+execute store result storage minipurge:variables border int 1 run scoreboard players get #border variables
 scoreboard players set #two variables 2
-$scoreboard players set #half_border variables $(border)
+scoreboard players operation #half_border variables = #border variables
 scoreboard players operation #half_border variables /= #two variables
 execute store result storage minipurge:variables half_border int 1 run scoreboard players get #half_border variables
-
-# Store lives as NBT value.
-$data modify storage minipurge:variables lives set value $(lives)
 
 # Transfer to NBT storage in seconds or set them to 1 second if 0
 execute if score #peace variables matches 1.. run execute store result storage minipurge:variables peace int 60 run scoreboard players get #peace variables
