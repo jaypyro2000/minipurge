@@ -47,6 +47,20 @@ scoreboard players operation #half_border variables = #border variables
 scoreboard players operation #half_border variables /= #two variables
 execute store result storage minipurge:variables half_border int 1 run scoreboard players get #half_border variables
 
+# Set daylight cycle flags.
+execute if score #peace variables matches ..-1 run scoreboard players set #peace_daylight variables 1
+execute if score #war variables matches ..-1 run scoreboard players set #war_daylight variables 1
+execute if score #shrink variables matches ..-1 run scoreboard players set #shrink_daylight variables 1
+
+execute if score #peace variables matches 1.. run scoreboard players set #peace_daylight variables 0
+execute if score #war variables matches 1.. run scoreboard players set #war_daylight variables 0
+execute if score #shrink variables matches 1.. run scoreboard players set #shrink_daylight variables 0
+
+# Make negative times positive.
+execute if score #peace variables matches ..-1 run scoreboard players operation #peace variables *= #negative variables
+execute if score #war variables matches ..-1 run scoreboard players operation #war variables *= #negative variables
+execute if score #shrink variables matches ..-1 run scoreboard players operation #shrink variables *= #negative variables
+
 # Transfer to NBT storage in seconds or set them to 1 second if 0
 execute if score #peace variables matches 1.. run execute store result storage minipurge:variables peace int 60 run scoreboard players get #peace variables
 execute if score #peace variables matches 0 run data modify storage minipurge:variables peace set value 1

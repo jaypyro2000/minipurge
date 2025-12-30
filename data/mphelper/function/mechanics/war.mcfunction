@@ -4,6 +4,10 @@ gamerule minecraft:pvp true
 # Run the add-ons.
 function mphelper:add_ons/run_add_ons {stage:mpwar}
 
+# Change Daylight Cycle
+execute if score #war_daylight variables matches 0 run gamerule minecraft:advance_time false
+execute if score #war_daylight variables matches 1 run gamerule minecraft:advance_time true
+
 # Change bossbar
 bossbar set minipurge:timerbar color yellow
 $bossbar set minipurge:timerbar max $(war)

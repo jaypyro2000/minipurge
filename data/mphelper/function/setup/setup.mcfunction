@@ -25,8 +25,10 @@ gamerule minecraft:locator_bar false
 execute as @a run function mphelper:setup/clear_enderchests
 
 # Set and keep time.
-time set noon
-gamerule minecraft:advance_time false
+execute if score #peace_daylight variables matches 0 run time set noon
+execute if score #peace_daylight variables matches 0 run gamerule minecraft:advance_time false
+execute if score #peace_daylight variables matches 1 run time set day
+execute if score #peace_daylight variables matches 1 run gamerule minecraft:advance_time true
 weather clear
 
 # Disable pvp.

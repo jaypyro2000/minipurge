@@ -1,6 +1,10 @@
 #Copyright JayPyro2000 2025. All Rights Reserved.
 $execute if score #shrink variables matches 1.. run worldborder set 20 $(shrink)s
 
+# Change Daylight Cycle
+execute if score #shrink_daylight variables matches 0 run gamerule minecraft:advance_time false
+execute if score #shrink_daylight variables matches 1 run gamerule minecraft:advance_time true
+
 # Change bossbar
 bossbar set minipurge:timerbar color red
 $execute if score #shrink variables matches 1.. run function mphelper:function/mechanics/shrink_bossbar {shrink:$(shrink)}
