@@ -19,10 +19,6 @@ $scoreboard players set #peace variables $(peace)
 $scoreboard players set #war variables $(war)
 $scoreboard players set #shrink variables $(shrink)
 
-# Set the endgame to occur 5 minutes before the world stops shrinking.
-$scoreboard players set #endgame variables $(shrink)
-execute if score #shrink variables matches 5.. run scoreboard players remove #endgame variables 5
-
 # Is used later to determine when to put players in spectator or kick them.
 $scoreboard players set #lives variables $(lives)
 execute if score #lives variables matches 0 run scoreboard players set #lives variables 1
@@ -60,6 +56,10 @@ execute if score #shrink variables matches 1.. run scoreboard players set #shrin
 execute if score #peace variables matches ..-1 run scoreboard players operation #peace variables *= #negative variables
 execute if score #war variables matches ..-1 run scoreboard players operation #war variables *= #negative variables
 execute if score #shrink variables matches ..-1 run scoreboard players operation #shrink variables *= #negative variables
+
+# Set the endgame to occur 5 minutes before the world stops shrinking.
+scoreboard players operation #endgame variables = #shrink variables
+execute if score #shrink variables matches 5.. run scoreboard players remove #endgame variables 5
 
 # Transfer to NBT storage in seconds or set them to 1 second if 0
 execute if score #peace variables matches 1.. run execute store result storage minipurge:variables peace int 60 run scoreboard players get #peace variables
