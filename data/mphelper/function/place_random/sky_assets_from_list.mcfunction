@@ -1,11 +1,14 @@
 $scoreboard players set #sky_assets_index variables $(count)
 
-$execute store result storage minipurge:variables sky_asset string 1 run data get storage minipurge:variables $(list)[$(random_index)]
+$data modify storage minipurge:variables asset_list set value "$(list)"
+$data modify storage minipurge:variables upper_padding set value $(upper_padding)
+$data modify storage minipurge:variables lower_padding set value $(lower_padding)
+$execute store result storage minipurge:variables random_index int 1 run function mphelper:place_random/random_list_index {list: "$(list)"}
 
-$(list)[$(random_index)]
 
-
-$execute run function mphelper:place_random/sky_asset {asset: "variables sky_asset", upper_padding:$(upper_padding), lower_padding:$(lower_padding)}
+execute run function mphelper:place_random/asset_dispatcher with storage minipurge:variables
 
 scoreboard players remove #sky_assets_index variables 1
-$execute if score #sky_assets_index variables matches 0.. run function mphelper:place_random/sky_asset_from_list {list: $(list), count: 5, upper_padding:$(upper_padding), lower_padding:$(lower_padding)}
+execute store result storage minipurge:variables sky_assets_index int 1 run scoreboard players get #sky_assets_index variables
+
+execute if score #sky_assets_index variables matches 1.. run function mphelper:place_random/sky_assets_from_list_dispatcher with storage minipurge:variables

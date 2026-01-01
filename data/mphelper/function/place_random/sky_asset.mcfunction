@@ -8,6 +8,7 @@ execute store result storage minipurge:variables place_z_pos int 1 run function 
 $data modify storage minipurge:variables upper_padding set value $(upper_padding)
 $data modify storage minipurge:variables lower_padding set value $(lower_padding)
 execute store result storage minipurge:variables place_y_pos int 1 run function mphelper:random_loc/random_sky_y with storage minipurge:variables
+execute store result score #place_y_pos variables run data get storage minipurge:variables place_y_pos 1
 
 # Pull the asset to place.
 $data modify storage minipurge:variables place_asset_asset set value "$(asset)"
@@ -23,4 +24,4 @@ execute if score #asset_mirror variables matches 1 run data modify storage minip
 execute if score #asset_mirror variables matches 2 run data modify storage minipurge:variables asset_mirror set value "front_back"
 execute if score #asset_mirror variables matches 3 run data modify storage minipurge:variables asset_mirror set value "left_right"
 
-execute run function mphelper:place_random/place_asset with storage minipurge:variables
+execute if score #sky_y variables matches 1.. run function mphelper:place_random/place_asset with storage minipurge:variables

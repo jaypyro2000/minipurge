@@ -1,0 +1,1 @@
+$execute run function mphelper:place_random/sky_asset {asset: "$(asset)", upper_padding: $(upper_padding), lower_padding: $(lower_padding)}
