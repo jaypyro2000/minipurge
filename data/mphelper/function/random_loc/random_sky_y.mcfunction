@@ -9,10 +9,10 @@ execute store result score #lower_padding variables run data get storage minipur
 scoreboard players operation #random_low variables += #lower_padding variables
 execute store result storage minipurge:variables random_low int 1 run scoreboard players get #random_low variables
 
-# Set up random number range high value as 320(max build height) - upper_padding
-scoreboard players set #random_high variables 320
+# Set up random number range high value as ground_y + upper_padding
+execute store result score #random_high variables run data get storage minipurge:variables sky_ground_y 1
 execute store result score #upper_padding variables run data get storage minipurge:variables upper_padding 1
-scoreboard players operation #random_high variables -= #upper_padding variables
+scoreboard players operation #random_high variables += #upper_padding variables
 execute store result storage minipurge:variables random_high int 1 run scoreboard players get #random_high variables
 
 # Get a sky_y within the random range.

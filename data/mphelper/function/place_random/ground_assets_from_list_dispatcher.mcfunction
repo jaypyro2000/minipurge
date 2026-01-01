@@ -1,0 +1,1 @@
+$execute run function mphelper:place_random/ground_assets_from_list {list: "$(asset_list)", count: $(ground_assets_index)}

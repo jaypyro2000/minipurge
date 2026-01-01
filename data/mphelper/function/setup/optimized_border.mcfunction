@@ -1,4 +1,3 @@
-execute store result score #player_count variables if entity @a
 
 # TODO: Optimize border using sqrt.
 #scoreboard players operation #players_squared variables = #player_count variables

@@ -75,5 +75,9 @@ execute store result storage minipurge:variables peace_mins int 1 run scoreboard
 execute store result storage minipurge:variables war_mins int 1 run scoreboard players get #war variables
 execute store result storage minipurge:variables shrink_mins int 1 run scoreboard players get #shrink variables
 
+# Get Player Count and transfer to storage.
+execute store result score #player_count variables if entity @a
+execute store result storage minipurge:variables player_count int 1 run scoreboard players get #player_count variables
+
 # Execute the boot sequence. 
 execute run function mphelper:setup/boot with storage minipurge:variables
