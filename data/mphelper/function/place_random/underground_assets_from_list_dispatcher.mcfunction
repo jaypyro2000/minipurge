@@ -1,0 +1,1 @@
+$execute run function mphelper:place_random/underground_assets_from_list {list: "$(asset_list)", count: $(underground_assets_index), upper_padding:$(upper_padding), lower_padding:$(lower_padding)}

@@ -18,4 +18,7 @@ execute store result storage minipurge:variables random_high int 1 run scoreboar
 # Get a sky_y within the random range.
 execute store result score #sky_y variables run function mphelper:place_random/random_number with storage minipurge:variables
 
+# Cap sky_y at 319 to avoid build height issues.
+execute if score #sky_y variables matches 320.. run scoreboard players set #sky_y variables 319
+
 return run scoreboard players get #sky_y variables
