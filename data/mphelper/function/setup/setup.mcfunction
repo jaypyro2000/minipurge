@@ -33,6 +33,7 @@ weather clear
 
 # Disable pvp.
 gamerule minecraft:pvp false
+gamerule spawn_phantoms false
 
 # Set worldborder.
 worldborder center ~ ~

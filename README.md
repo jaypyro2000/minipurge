@@ -1,6 +1,6 @@
 # Welcome to the world of Minipurge!
 
-Minipurge is an automatic Minecraft Purge/Hunger Games/Fortnite multiplayer world event scheduler.
+Minipurge is an automatic Minecraft Purge/Hunger Games/Fortnite multiplayer world event scheduler and handler.
 
 The latest stable releases can be downloaded here from [Modrinth](https://modrinth.com/datapack/minipurge) or [Curseforge.](https://www.curseforge.com/minecraft/data-packs/minipurge) 
 
@@ -17,16 +17,20 @@ The time for each of these stages, the initial border size and the number of liv
 3. Teleport to a random unexplored area.
 4. Run the command:
 ```
-    /function minipurge:start { lives:<value>, border:<value>, peace:<value>, war:<value>, shrink:<value> }
+    /function minipurge:start { lives:<int>, border:<int>, peace:<int>, war:<int>, shrink:<int> }
 ```
 
-    Where each <value> can be set to your liking!
+    Where each <int> must be an integer but can be set to your liking!
 
-"lives" is the number of lives a player has before going into spectator.
-"border" is the size of the starting border.
-"peace" is the length of no pvp in minutes.
-"war" is the length of enabled pvp in minutes.
-"shrink" is the amount of time it takes for the border to shrink to 20 blocks in minutes.
+"lives" is the number of lives a player has. If it is positive players get kicked when they run out of lives. If it is negative players go into spectator when they run out of lives.
+
+"border" is the size of the starting border. If you set this to zero the border will be set so that there are ~160,000 blocks per player. (If you find a different world size works better please let me know as I would like to make it a function of both players and game time but don't have egnough data)
+
+"peace" is the length of no pvp in minutes. Setting this negative will make the daylight cycle occur for this stage. Setting it to zero will start the players scattered around the game area. Setting it positive will lock the time at noon.
+
+"war" is the length of enabled pvp in minutes. Setting this negative will turn the daylight cycle on for this stage. Setting it positive will turn the daylight cycle off.
+
+"shrink" is the amount of time it takes for the border to shrink to 20 blocks in minutes. Setting this negative will turn the daylight cycle on for this stage. Setting it to zero will casue the border not to shrink. Setting it positive will turn the daylight cycle off.
 
 ### Warning!! This command will teleport all players and clear their inventories and ender chests!
 Put player heads (one at a time) in the chest at spawn to get golden apples!

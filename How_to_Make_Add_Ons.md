@@ -71,9 +71,31 @@ function mphelper:surface/surface_from_scoreboard {x_pos_score:"#player_x object
 
 function mphelper:surface/surface_from_storage {x_pos_storage:"namespace:storage_location x_variable",z_pos_storage:"namespace:storage_location z_variable"}
 ```
+
+### Placing Assets (Structures) Randomly
+
+You can place an NBT structure at random throuout the map very easily by using the place_random functions:
+
+```
+function mphelper:place_random/sky_assets_from_list {list: "namespace:storage_location a_list", count: n, upper_padding: a, lower_padding: b}
+```
+Will place n structures from a_list (containing names of paths to structures) in the sky at random between a and b blocks from the surface.
+
+```
+function mphelper:place_random/underground_assets_from_list {list: "namespace:storage_location a_list", count: n, upper_padding: a, lower_padding: b}
+```
+Will place n structures from a_list (containing names of paths to structures) underground at random between a and b blocks from the surface.
+
+```
+function mphelper:place_random/underground_assets_from_list {list: "namespace:storage_location a_list", count: n}
+```
+Will place n structures from a_list (containing names of paths to structures) on the surface.
+
+Note: Place ground structures during the boot phase before players enter the arena and sky structures during the setup phase so that players dont spawn on the sky structures.
+
 ### Adding Mid Structures
 
-Minipurge randomly selects a structure from a registry of mid structures. The registry has three parts. 1) The name of the structure, located at minipurge:structure structures . 2) The height of the mid chest from the ground, located at minipurge:structure structure_heights . 3) (Not working yet) The distance a player should spawn from mid, located at minipurge:structure spawn_distances .
+Minipurge randomly selects a structure from a registry of mid structures. The registry has three parts. 1) The name of the structure, located at minipurge:structure structures . 2) The height of the mid chest from the ground, located at minipurge:structure structure_heights . 3) (Not working yet) The fixed distance a player should spawn from mid, located at minipurge:structure spawn_distances .
 
 You can overwrite all the structures to only have specific mid structures or you can add your structures to the mix by appending them to the lists. This must be done in the mpboot stage as the structures list is cleared at the end of each round. All three storage locations must be written to for each structure!
 
@@ -84,6 +106,12 @@ data modify storage minipurge:structure structure_heights append value 12
 data modify storage minipurge:structure spawn_distances append value 0
 ```
 
+### Item in list
+
+```
+function mphelper:register/item_in_list {item:an_item,list:"namespace:storage_loaction a_list"}
+```
+Will return true if an_item is in a_list.
 
 ## Good Practices
 
