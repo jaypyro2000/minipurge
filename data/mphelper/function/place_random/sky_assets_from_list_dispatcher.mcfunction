@@ -1,1 +1,0 @@
-$execute run function mphelper:place_random/sky_assets_from_list {list: "$(asset_list)", count: $(sky_assets_index), upper_padding:$(upper_padding), lower_padding:$(lower_padding)}

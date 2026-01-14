@@ -1,3 +1,0 @@
-$execute if score #asset_type variables matches 1 run function mphelper:place_random/underground_asset {asset: "$(asset)", upper_padding: $(upper_padding), lower_padding: $(lower_padding)}
-$execute if score #asset_type variables matches 2 run function mphelper:place_random/ground_asset {asset: "$(asset)"}
-$execute if score #asset_type variables matches 3 run function mphelper:place_random/sky_asset {asset: "$(asset)", upper_padding: $(upper_padding), lower_padding: $(lower_padding)}
