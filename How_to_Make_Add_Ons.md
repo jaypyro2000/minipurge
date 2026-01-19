@@ -74,24 +74,24 @@ function mphelper:surface/surface_from_storage {x_pos_storage:"namespace:storage
 
 ### Placing Assets (Structures) Randomly
 
-You can place an NBT structure at random throuout the map very easily by using the place_random functions:
+You can place an NBT structure at random throuout the map very easily by using the place/random functions:
 
 ```
-function mphelper:place_random/sky_assets_from_list {list: "namespace:storage_location a_list", count: n, upper_padding: a, lower_padding: b}
+function mphelper:place/random/sky/templates_from_list {list: "namespace:storage_location a_list", count: n, min_agl: a, max_agl: b}
 ```
-Will place n structures from a_list (containing names of paths to structures) in the sky at random between a and b blocks from the surface.
+Will place n structures from a_list (containing names of paths to structures) in the sky at random between a agl (above ground level) and b agl.
 
 ```
-function mphelper:place_random/underground_assets_from_list {list: "namespace:storage_location a_list", count: n, upper_padding: a, lower_padding: b}
+function mphelper:place/random/underground/templates_from_list {list: "namespace:storage_location a_list", count: n, min_bgs: a, max_bgs: b}
 ```
-Will place n structures from a_list (containing names of paths to structures) underground at random between a and b blocks from the surface.
+Will place n structures from a_list (containing names of paths to structures) underground at random between a bgs (below ground surface and b bgs.
 
 ```
-function mphelper:place_random/underground_assets_from_list {list: "namespace:storage_location a_list", count: n}
+function mphelper:place/random/ground/templates_from_list {list: "namespace:storage_location a_list", count: n, min_from_mid: a, max_from_mid: b}
 ```
-Will place n structures from a_list (containing names of paths to structures) on the surface.
+Will place n structures from a_list (containing names of paths to structures) on the surface between a and b blocks away from mid.
 
-Note: Place ground structures during the boot phase before players enter the arena and sky structures during the setup phase so that players dont spawn on the sky structures.
+Note: Place ground and underground structures during the boot phase before players enter the arena and sky structures during the setup phase so that players dont spawn on the sky structures.
 
 ### Adding Mid Structures
 
@@ -109,7 +109,7 @@ data modify storage minipurge:structure spawn_distances append value 0
 ### Item in list
 
 ```
-function mphelper:register/item_in_list {item:an_item,list:"namespace:storage_loaction a_list"}
+function mphelper:register/item_in_list {item:an_item,list:"namespace:storage_loction a_list"}
 ```
 Will return true if an_item is in a_list.
 
