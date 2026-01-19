@@ -5,6 +5,8 @@ $scoreboard players set #ground_templates_index variables $(count)
 $data modify storage minipurge:variables template_list set value "$(list)"
 $data modify storage minipurge:variables min_from_mid set value $(min_from_mid)
 $data modify storage minipurge:variables max_from_mid set value $(max_from_mid)
+$scoreboard players set #min_from_mid variables $(min_from_mid)
+$scoreboard players set #max_from_mid variables $(max_from_mid)
 
 $execute store result storage minipurge:variables random_index int 1 run function mphelper:place/random/random_list_index {list: "$(list)"}
 
