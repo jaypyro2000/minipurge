@@ -58,6 +58,9 @@ bossbar set minipurge:timerbar players @a
 $scoreboard players set #countdown variables $(peace)
 schedule function mphelper:mechanics/countdown 5s
 
+#Clean up floating items
+kill @e[type=item] 
+
 #Display title
 title @a times 20 40 20
 title @a title {"text":"Let the Games Begin!", "bold":true, "italic":true, "color":"green"}
